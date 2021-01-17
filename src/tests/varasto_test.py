@@ -16,12 +16,12 @@ class TestVarasto(unittest.TestCase):
     def test_uudella_varastolla_positiivinen_tilavuus(self):
         self.negatiivinen_varasto = Varasto(-1)
         
-        self.assertGreaterEqual(self.varasto.tilavuus, 0)
+        self.assertGreaterEqual(self.negatiivinen_varasto.tilavuus, 0)
 
     def test_uudella_varastolla_positiivinen_alku_saldo(self):
         self.negatiivisen_saldon_varasto = Varasto(10, -1)
         
-        self.assertGreaterEqual(self.varasto.saldo, 0)
+        self.assertGreaterEqual(self.negatiivisen_saldon_varasto.saldo, 0)
 
     def test_uudella_varastolla_saldo_ei_isompi_kuin_tilavuus(self):
         self.assertLessEqual(self.varasto.saldo, self.varasto.tilavuus)
